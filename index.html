@@ -1,53 +1,30 @@
 <html>
+
 <head>
-<title>ASP Chat Box</title>
-<META http-equiv="refresh" content="">
+<title>DIC ChatBox Beta 1</title>
 </head>
 
 <body>
-<&#37;
-if request.Form("func") = "Send" then
 
-nickName = trim(request.Form("nickName"))
-
-chatBox = trim(request.Form("chatBox"))
-
-session("nickName") = nickName
-
-Set objFlSys = Server.CreateObject("Scripting.FileSystemObject")
-chatFile = Server.MapPath ("chatlog.txt")
-Set objStreamOutput= objFlSys.OpenTextFile (chatFile, 1, TRUE)
-ipaddr=Request.ServerVariables("REMOTE_ADDR") & " : "
-objStreamOutput.Write "<b>" & nickName & "</b>:"
-objStreamOutput.WriteLine chatBox & "<BR>" & vbnewline
-Set objStreamOutput = Nothing
-
-end if
-
-Set objFlSys = Server.CreateObject("Scripting.FileSystemObject")
-chatFile = Server.MapPath ("chatlog.txt")
-Set objStreamInput = objFlSys.OpenTextFile (chatFile, 1, False, False)
-Response.Write objStreamInput.ReadALL & "<br/>"
-Set objStreamInput=Nothing
-
-%>
-
-<form action="" method="post" >
-<strong>Nickname :</strong>
-<p>
-<input name="nickName" value=""nickName")" size="18"/><br/>
-</p>
-<p>
-<strong>Message : </strong>
-<br/>
-<textarea cols="14" rows="11" name="chatBox"></textarea>
-<input type="submit" name="func" value="Send"/>
-<textarea cols="25" rows="11" name="chatBox0"></textarea></p>
+<h1></DIC> Chat Box</h1>
+<form id="signInForm">
+  <input id="userName" type="text">
+	<input id="signInButt" name="signIn" type="submit" value="Sign in">
+	<span id="signInName">User name</span>
 </form>
 
-</body>
+<div id="chatBox"></div>
 
+<div id="usersOnLine"></div>
+
+<form id="messageForm">
+	<input id="message" type="text">
+	<input id="send" type="submit" value="Send">
+<div id="serverRes"></div>
+</form>
+</body>
 </html>
+
 
 <!-- Google Analytics stuff-->
 <script type="text/javascript">
