@@ -22,20 +22,27 @@
     if (e.keyCode == 13) {
       var name = $('#nameInput').val();
       var text = $('#messageInput').val();
-      messagesRef.push({name:name, text:text});
+      var d = new Date();
+      var time = d.toTimeString();
+      var m = d.getMinutes().toString();
+      var h = d.getHours().toString();
+      var s = d.getSeconds().toString();
+      var time=h.concat(':').concat(m).concat(':').concat(s);
+      
+      messagesRef.push({name:name, text:text, time:time});
       $('#messageInput').val('');
+
     }
   });
 
   // Add a callback that is triggered for each chat message.
   messagesRef.limit(10).on('child_added', function (snapshot) {
-      var today = new Date(); 
-      var m = today.getMinutes();
-      var h = today.getHours();
-      var s = today.getSeconds();
-        var message = snapshot.val();
+       
+    var message = snapshot.val();
+
+
     $('<div/>').text(message.text).prepend($('<em/>')
-      .text(h+':'+m+':'+s+'-> '+message.name+': ')).appendTo($('#messagesDiv'));
+      .text(message.time+ '-> '+message.name+': ')).appendTo($('#messagesDiv'));
     $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
   });
 </script>
