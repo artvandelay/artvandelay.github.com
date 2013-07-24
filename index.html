@@ -25,8 +25,8 @@
 
   // Add a callback that is triggered for each chat message.
   messagesRef.limit(10).on('child_added', function (snapshot) {
-    var today = new Date(); 
-    var time = today.getHours(),":",today.getMinutes(),":",today.getSeconds(); 
+    //var today = new Date(); 
+    //var time = today.getHours(),":",today.getMinutes(),":",today.getSeconds(); 
     var message = snapshot.val();
     $('<div/>').text(message.text).prepend($('<em/>')
       .text(message.name+': ')).appendTo($('#messagesDiv'));
