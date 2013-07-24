@@ -52,7 +52,8 @@ em {
   height: 500px;
   width: 300px;
   padding: 10px;
-  border: 8px solid #424547;
+ /* border: 8px solid #424547;*/
+  border: 8px solid #2c3e50;
   margin-bottom: 5px;
   text-align: left;
 }
