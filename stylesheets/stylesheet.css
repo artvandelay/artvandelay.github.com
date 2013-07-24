@@ -49,8 +49,8 @@ em {
 #messagesDiv {
   background-color: white;
   overflow: auto;
-  height: 460px;
-  width: 140px;
+  height: 500px;
+  width: 300px;
   padding: 10px;
   border: 8px solid #424547;
   margin-bottom: 5px;
