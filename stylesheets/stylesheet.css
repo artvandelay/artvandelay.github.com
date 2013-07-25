@@ -47,7 +47,7 @@ em {
 
 /* Chat */
 #messagesDiv {
-  background-color: #95a5a6;
+  background-color: white;
   overflow: auto;
   height: 460px;
   width: 100%;
