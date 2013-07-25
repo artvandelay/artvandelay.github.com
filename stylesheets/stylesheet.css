@@ -51,7 +51,7 @@ em {
   overflow: auto;
   height: 460px;
   width: 100%;
-  padding: 10px;
+  padding: 5px;
  /* border: 8px solid #424547;*/
   border: 8px solid #2c3e50;
   margin-bottom: 5px;
@@ -63,7 +63,7 @@ em {
 }
 
 #messageInput {
-  width: 68%;
+  width: 74%;
 }
 
 /* Drawing */
